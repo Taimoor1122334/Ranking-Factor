@@ -47,119 +47,17 @@
     @apply  text-white font-bold text-[70px] md:text-[130px] leading-none self-start mt-8
   }
 
-  /* Backlink Strategies Section Styles */
-  .computer-screen {
-    @apply w-full max-w-[500px] h-[400px] bg-[#1a1a1a] rounded-[20px] border-3 border-[#333] relative overflow-hidden shadow-2xl;
-  }
+.q-image{
+  @apply absolute left-1/2 -translate-x-1/2 top-0 h-auto max-w-[626px] object-cover object-center opacity-0 transition-opacity duration-500 ease-out;
+}
+.tab-item{
+  @apply  cursor-pointer  border-b border-white px-4 py-4 transition-colors w-full max-w-2xl
+}
+.tab-item .heading{
+  @apply  uppercase text-white text-[42px] leading-[37px] !font-normal
+}
 
-  .screen-content {
-    @apply w-full h-full bg-[#0a0a0a] p-5 font-mono text-[#00ff00] relative;
-  }
-
-  .trading-header {
-    @apply flex justify-between items-center mb-5 pb-3 border-b border-[#333];
-  }
-
-  .trading-title {
-    @apply text-lg font-bold text-[#00ff00];
-  }
-
-  .trading-time {
-    @apply text-base text-[#00ff00] font-bold;
-  }
-
-  .trading-data {
-    @apply grid grid-cols-3 gap-4 mb-5;
-  }
-
-  .data-column {
-    @apply bg-[#1a1a1a] p-3 rounded border border-[#333];
-  }
-
-  .data-label {
-    @apply text-xs text-[#888] mb-1;
-  }
-
-  .data-value {
-    @apply text-sm font-bold;
-  }
-
-  .positive {
-    @apply text-[#00ff00];
-  }
-
-  .negative {
-    @apply text-[#ff0000];
-  }
-
-  .chart-area {
-    @apply h-[200px] bg-[#1a1a1a] border border-[#333] rounded relative mb-5;
-  }
-
-  .chart-bar {
-    @apply absolute bottom-0 right-12 w-8 h-[150px] bg-[#ff0000] rounded-t;
-  }
-
-  .taskbar {
-    @apply absolute bottom-0 left-0 right-0 h-10 bg-[#2d2d2d] flex items-center px-5 gap-4;
-  }
-
-  .taskbar-icon {
-    @apply w-6 h-6 bg-[#4a90e2] rounded flex items-center justify-center text-white text-xs font-bold;
-  }
-
-  .backlink-text {
-    @apply absolute bottom-16 left-5 text-2xl text-[#4a90e2] font-bold opacity-30;
-  }
-
-  /*
-  .image-overlay {
-    @apply absolute inset-0 bg-black opacity-70 opacity-0 transition-opacity duration-300 flex items-center justify-center flex-col;
-  }
-*/
-  .image-overlay.active {
-    @apply opacity-100;
-  }
-
-  .overlay-image {
-    @apply w-4/5 h-3/5 object-cover rounded-lg mb-5 shadow-2xl;
-  }
-
-  .overlay-title {
-    @apply text-xl font-bold text-white text-center drop-shadow-lg;
-  }
-
-  .header-banner {
-    @apply bg-[#4a90e2] p-5 rounded-lg mb-10 text-center text-lg font-bold uppercase tracking-wider shadow-lg;
-  }
-/*
-  .strategy-item {
-    @apply p-6 border-b border-white border-opacity-20 cursor-pointer transition-all duration-300;
-  }
-*/
-  .strategy-item:last-child {
-    @apply border-b-0;
-  }
-
-  /*
-  .strategy-item:hover {
-    @apply pl-8 bg-white bg-opacity-10 rounded-lg;
-  }
-
-  .strategy-item.active {
-    @apply pl-8 bg-white bg-opacity-15 rounded-lg transform translate-x-2;
-  }
-    */
-
-  .strategy-title {
-    @apply text-base font-bold mb-2 uppercase tracking-wider;
-  }
-/*
-  .strategy-subtitle {
-    @apply text-sm text-white text-opacity-80 leading-relaxed;
-  }
-
-  */
+ 
 }
 
   .btns{

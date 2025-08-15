@@ -181,116 +181,34 @@ function revealMenuItems() {
     }, 100);
   });
 
-// Backlink Strategies Section Functionality
-const strategyItems = document.querySelectorAll('.strategy-item');
-const imageOverlay = document.getElementById('imageOverlay');
-const overlayImage = document.getElementById('overlayImage');
-const overlayTitle = document.getElementById('overlayTitle');
 
-// Function to show image overlay
-function showImageOverlay(imageSrc, title) {
-  if (overlayImage) {
-    overlayImage.src = imageSrc;
-  }
-  if (overlayTitle) {
-    overlayTitle.textContent = title;
-  }
-  if (imageOverlay) {
-    imageOverlay.classList.add('active');
-  }
-}
+//question --------
 
-// Function to set active strategy
-function setActiveStrategy(strategyItem) {
-  // Remove active class from all items
-  strategyItems.forEach(item => {
-    item.classList.remove('active');
-  });
-  
-  // Add active class to selected item
-  strategyItem.classList.add('active');
-}
+  const tabs = document.querySelectorAll('.tab-item');
+  const images = document.querySelectorAll('[data-image]');
 
-// Function to hide image overlay
-function hideImageOverlay() {
-  if (imageOverlay) {
-    imageOverlay.classList.remove('active');
-  }
-}
-
-// Track if user is hovering over any strategy item
-let isHoveringStrategy = false;
-
-// Add event listeners to strategy items
-strategyItems.forEach(item => {
-  const imageSrc = item.getAttribute('data-image');
-  const title = item.getAttribute('data-title');
-  
-  item.addEventListener('mouseenter', () => {
-    isHoveringStrategy = true;
-    showImageOverlay(imageSrc, title);
-    setActiveStrategy(item);
-  });
-  
-  item.addEventListener('mouseleave', () => {
-    isHoveringStrategy = false;
-    // Show default first image when not hovering any strategy
-    setTimeout(() => {
-      if (!isHoveringStrategy && strategyItems.length > 0) {
-        const defaultImage = strategyItems[0].getAttribute('data-image');
-        const defaultTitle = strategyItems[0].getAttribute('data-title');
-        showImageOverlay(defaultImage, defaultTitle);
-        setActiveStrategy(strategyItems[0]);
-      }
-    }, 100);
-  });
-  
-  item.addEventListener('click', () => {
-    showImageOverlay(imageSrc, title);
-    setActiveStrategy(item);
-  });
-});
-
-// Initialize with first strategy active
-if (strategyItems.length > 0) {
-  const firstStrategy = strategyItems[0];
-  const imageSrc = firstStrategy.getAttribute('data-image');
-  const title = firstStrategy.getAttribute('data-title');
-  showImageOverlay(imageSrc, title);
-  setActiveStrategy(firstStrategy);
-}
-
-// Add subtle animation to the trading time
-function updateTime() {
-  const timeElement = document.getElementById('tradingTime');
-  if (timeElement) {
-    const now = new Date();
-    const timeString = now.toLocaleTimeString('en-US', { 
-      hour12: false,
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit'
+  function setActive(index) {
+    // Images
+    images.forEach((img, i) => {
+      img.style.opacity = i === index ? '1' : '0';
+      img.style.zIndex = i === index ? '10' : '0';
     });
-    timeElement.textContent = timeString;
+    // Tabs
+    tabs.forEach((tab, i) => {
+      if (i === index) {
+        tab.classList.add('bg-[#2a57f8]');
+        tab.classList.remove('bg-transparent');
+      } else {
+        tab.classList.remove('bg-[#2a57f8]');
+        tab.classList.add('bg-transparent');
+      }
+    });
   }
-}
 
-// Update time every second
-setInterval(updateTime, 1000);
-updateTime();
-
-// Add some random data updates to make it look more realistic
-function updateTradingData() {
-  const dataValues = document.querySelectorAll('.data-value');
-  dataValues.forEach(value => {
-    if (Math.random() > 0.5) {
-      const change = (Math.random() * 10 - 5).toFixed(2);
-      const isPositive = change > 0;
-      value.textContent = `${isPositive ? '+' : ''}${change}%`;
-      value.className = isPositive ? 'data-value positive' : 'data-value negative';
-    }
+  // Hover to activate
+  tabs.forEach((tab, i) => {
+    tab.addEventListener('mouseenter', () => setActive(i));
   });
-}
 
-// Update trading data every 3 seconds
-setInterval(updateTradingData, 3000);
+  // Default active state
+  setActive(0);
