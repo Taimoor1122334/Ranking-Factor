@@ -212,3 +212,4 @@ function revealMenuItems() {
 
   // Default active state
   setActive(0);
+
