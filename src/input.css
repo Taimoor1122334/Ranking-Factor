@@ -16,10 +16,11 @@
 }
 
 
+
 @layer compnents{
 
   h1{
-    @apply font-black text-[130px] leading-[90%] uppercase text-white
+    @apply font-black leading-[90%] uppercase text-white  text-[70px] md:text-[100px] lg:text-[130px]
   }
 
   h3{
@@ -29,24 +30,59 @@
   h4{
     @apply font-medium text-white
   }
-  .industry-cell{
-    @apply  border-r border-b border-white py-10 flex items-center justify-center cursor-pointer  transition-colors
+
+  .intro-main-title{
+    @apply font-bold text-[45px] md:text-[110px] lg:text-[150px] text-[#142041]
   }
-  .industry-cell-text{
-    @apply text-white font-medium text-[22px] leading-[121%]  text-center
+
+  .description{
+    @apply text-[#FFFFFF]  font-medium text-[16px] md:text-[18px] lg:text-[20px] max-w-[750px] leading-[100%]
   }
+  .cta-link{
+    @apply  text-[20px] text-white font-medium underline hover:text-[#3b82f6] decoration-[#3b82f6] -outline-offset-4
+  }
+  .overlay-text{
+    @apply text-[30px] md:text-[50px] lg:text-[70px]
+  }
+  .intro-section{
+    @apply   py-[1rem] md:py-[2rem] lg:py-[3rem] px-[4px] md:px-[0.6rem] lg:px-[1rem]
+  }
+.carousel-slide{
+  @apply  max-w-[180px] md:max-w-[230px] lg:max-w-[293px]
+}
+
+.arrow-icon{
+  @apply  w-[30px]  md:w-[50px]  lg:w-[70px] h-[30px] md:h-[50px] lg:h-[70px]
+}
+ 
+.overlay-text2{
+  @apply  text-[40px] md:text-[100px]  lg:text-[130px] absolute top-[60%] left-[40%] lg:left-[34%]
+}
+.industry-cell {
+  @apply border-r border-b border-white py-8 sm:py-10 flex items-center justify-center cursor-pointer transition-colors;
+}
+.industry-cell-text {
+  @apply text-white font-medium text-base sm:text-lg md:text-xl leading-[121%] text-center;
+}
+ 
+
+.overlay-text3{
+  @apply absolute top-[50%] left-[40%] md:left-[40%] lg:left-[50%] text-[20px] md:text-[40px] lg:text-[70px] 
+}
 
   .service-description{
     @apply text-white text-[18px] uppercase leading-5
   }
 
-  .local-seo-title{
-    @apply text-white font-bold text-[70px] md:text-[130px] leading-none
-  }
-  .local-seo-title-top{
-    @apply  text-white font-bold text-[70px] md:text-[130px] leading-none self-start mt-8
-  }
-
+.local-seo-title {
+  @apply text-white font-bold text-[50px] md:text-[70px] lg:text-[130px] leading-none;
+}
+.local-seo-title-top {
+  @apply text-white font-bold text-[50px] md:text-[70px] lg:text-[130px] leading-none mt-4 md:mt-8  lg:self-start;
+}
+.service-description {
+  @apply text-white text-sm sm:text-base md:text-[16px] leading-relaxed;
+}
   .rtr-title{
     @apply font-bold text-white text-[150px] py-12 leading-0 
   }
@@ -314,7 +350,6 @@ margin-top: -7px;
 
 /*----------Loader----------------*/
 
-
 .loader {
   position: fixed;
   top: 0;
@@ -338,7 +373,8 @@ margin-top: -7px;
 }
 
 .upper-text h3, .lower-text h3 {
-  font-size: 250px;
+  /* Responsive font size */
+  font-size: clamp(2rem, 15vw, 250px);
   font-family: "Poppins", sans-serif;
   font-weight: 700;
   color: #fff;
@@ -356,6 +392,7 @@ margin-top: -7px;
 .lower-text h3 {
   transform: translateX(-100vw);
 }
+
 
 /*---------Hero section------------------*/
 
@@ -377,8 +414,6 @@ margin-top: -7px;
   align-items: center;
   justify-content: center;
   text-align: center;
- 
-  padding: 3rem 1rem;
   position: relative;
   color: white;
 }
@@ -388,8 +423,6 @@ margin-top: -7px;
 }
 
 .arrow-icon {
-  width: 70px;
-  height: 70px;
   color: white;
   animation: bounce 2s infinite;
   cursor: pointer;
@@ -442,35 +475,11 @@ margin-top: -7px;
   left: 50%;
   transform: translate(-50%, -50%);
   color: #3B5FDF;
-  font-style: italic;
-  font-size: 70px;
   white-space: nowrap;
   z-index: 10;
   font-family: 'Eagle Horizon', serif;
 }
 
-
-
-.description {
-  color: #d1d5db;
-  font-size: 1rem;
-  line-height: 1.6;
-  max-width: 750px;
-  margin: 0;
-}
-
-.cta-link {
-  color: white;
-  font-weight: 600;
-  text-decoration: underline;
-  text-decoration-color: #3b82f6; 
-  font-size: 1rem;
-  margin: 0;
-  text-underline-offset: 4px;
-}
-.cta-link:hover{
-  color:#3b82f6 ;
-}
 
 
 /*---------Gallery-------------*/
@@ -494,7 +503,6 @@ margin-top: -7px;
 
 .carousel-slide{
   flex: 0 0 auto;
-  max-width: 293px;
   height: auto;
   margin-right: 1rem;
   transition: transform 0.3s ease;
@@ -525,13 +533,10 @@ margin-top: -7px;
 
 .overlay-text2{
 
-    position: absolute;
-  top: 60%;
-  left: 34%;
+
   transform: translate(-50%, -50%);
   color: #3B5FDF;
   line-height: 100%;
-  font-size: 130px;
   white-space: nowrap;
   z-index: 10;
   font-family: 'Eagle Horizon', serif;
@@ -577,13 +582,10 @@ margin-top: -7px;
 
 .overlay-text3{
 
-    position: absolute;
-  top: 50%;
-  left: 45%;
+ 
   transform: translate(-50%, -50%);
   color: #142041;
   line-height: 100%;
-  font-size: 70px;
   white-space: nowrap;
   z-index: 10;
   font-family: 'Eagle Horizon', serif;
@@ -641,6 +643,14 @@ margin-top: -7px;
 }
 .image-panel:not(.expanded) {
   flex: 0.9;
+}
+
+@media (min-width: 768px) {
+  .vertical-heading {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+  }
 }
 
 /*--------------------------*/
