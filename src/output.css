@@ -21,6 +21,7 @@
     --text-lg--line-height: calc(1.75 / 1.125);
     --text-2xl: 1.5rem;
     --text-2xl--line-height: calc(2 / 1.5);
+    --font-weight-light: 300;
     --font-weight-normal: 400;
     --font-weight-medium: 500;
     --font-weight-bold: 700;
@@ -235,11 +236,11 @@
   .mt-12 {
     margin-top: calc(var(--spacing) * 12);
   }
-  .mb-20 {
-    margin-bottom: calc(var(--spacing) * 20);
-  }
   .mb-30 {
     margin-bottom: calc(var(--spacing) * 30);
+  }
+  .block {
+    display: block;
   }
   .flex {
     display: flex;
@@ -298,11 +299,14 @@
   .max-w-\[230px\] {
     max-width: 230px;
   }
+  .max-w-\[1047px\] {
+    max-width: 1047px;
+  }
   .max-w-\[1320px\] {
     max-width: 1320px;
   }
-  .max-w-lg {
-    max-width: var(--container-lg);
+  .min-w-\[300px\] {
+    min-width: 300px;
   }
   .flex-1 {
     flex: 1;
@@ -326,6 +330,9 @@
   .grid-cols-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
+  .grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
   .grid-cols-5 {
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
@@ -338,8 +345,14 @@
   .items-end {
     align-items: flex-end;
   }
+  .items-start {
+    align-items: flex-start;
+  }
   .items-stretch {
     align-items: stretch;
+  }
+  .justify-between {
+    justify-content: space-between;
   }
   .justify-center {
     justify-content: center;
@@ -349,6 +362,9 @@
   }
   .gap-0 {
     gap: calc(var(--spacing) * 0);
+  }
+  .gap-2 {
+    gap: calc(var(--spacing) * 2);
   }
   .gap-4 {
     gap: calc(var(--spacing) * 4);
@@ -362,12 +378,28 @@
   .gap-8 {
     gap: calc(var(--spacing) * 8);
   }
+  .gap-10 {
+    gap: calc(var(--spacing) * 10);
+  }
   .space-y-3 {
     :where(& > :not(:last-child)) {
       --tw-space-y-reverse: 0;
       margin-block-start: calc(calc(var(--spacing) * 3) * var(--tw-space-y-reverse));
       margin-block-end: calc(calc(var(--spacing) * 3) * calc(1 - var(--tw-space-y-reverse)));
     }
+  }
+  .space-y-24 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 24) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 24) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .gap-x-12 {
+    column-gap: calc(var(--spacing) * 12);
+  }
+  .gap-y-12 {
+    row-gap: calc(var(--spacing) * 12);
   }
   .overflow-hidden {
     overflow: hidden;
@@ -447,9 +479,6 @@
   .px-4 {
     padding-inline: calc(var(--spacing) * 4);
   }
-  .px-6 {
-    padding-inline: calc(var(--spacing) * 6);
-  }
   .px-8 {
     padding-inline: calc(var(--spacing) * 8);
   }
@@ -471,8 +500,14 @@
   .py-16 {
     padding-block: calc(var(--spacing) * 16);
   }
+  .py-20 {
+    padding-block: calc(var(--spacing) * 20);
+  }
   .py-30 {
     padding-block: calc(var(--spacing) * 30);
+  }
+  .pt-30 {
+    padding-top: calc(var(--spacing) * 30);
   }
   .text-center {
     text-align: center;
@@ -491,6 +526,9 @@
   .text-\[26px\] {
     font-size: 26px;
   }
+  .text-\[30px\] {
+    font-size: 30px;
+  }
   .text-\[32px\] {
     font-size: 32px;
   }
@@ -505,6 +543,10 @@
   }
   .text-\[300px\] {
     font-size: 300px;
+  }
+  .leading-\[33px\] {
+    --tw-leading: 33px;
+    line-height: 33px;
   }
   .leading-\[81\%\] {
     --tw-leading: 81%;
@@ -807,6 +849,15 @@
       font-size: 130px;
     }
   }
+  .rtr-title {
+    padding-block: calc(var(--spacing) * 12);
+    font-size: 150px;
+    --tw-leading: calc(var(--spacing) * 0);
+    line-height: calc(var(--spacing) * 0);
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-white);
+  }
   .q-image {
     position: absolute;
     top: calc(var(--spacing) * 0);
@@ -847,6 +898,37 @@
     font-weight: var(--font-weight-normal) !important;
     color: var(--color-white);
     text-transform: uppercase;
+  }
+  .footer-nav-link {
+    font-size: 42px;
+    --tw-leading: 100%;
+    line-height: 100%;
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-white);
+    text-transform: uppercase;
+    &:hover {
+      @media (hover: hover) {
+        color: #3B5FDF;
+      }
+    }
+  }
+  .f-contact-heading {
+    font-size: 14px;
+    --tw-leading: 100%;
+    line-height: 100%;
+    --tw-font-weight: var(--font-weight-light) !important;
+    font-weight: var(--font-weight-light) !important;
+    color: #FBFBFB;
+  }
+  .f-contact {
+    font-size: 30px;
+    color: var(--color-white);
+    &:hover {
+      @media (hover: hover) {
+        color: #3B5FDF;
+      }
+    }
   }
 }
 .btns {

@@ -47,6 +47,10 @@
     @apply  text-white font-bold text-[70px] md:text-[130px] leading-none self-start mt-8
   }
 
+  .rtr-title{
+    @apply font-bold text-white text-[150px] py-12 leading-0 
+  }
+
 .q-image{
   @apply absolute left-1/2 -translate-x-1/2 top-0 h-auto max-w-[626px] object-cover object-center opacity-0 transition-opacity duration-500 ease-out;
 }
@@ -56,7 +60,15 @@
 .tab-item .heading{
   @apply  uppercase text-white text-[42px] leading-[37px] !font-normal
 }
-
+.footer-nav-link{
+  @apply  text-white font-bold leading-[100%] text-[42px] uppercase hover:text-[#3B5FDF]
+}
+.f-contact-heading{
+  @apply  text-[#FBFBFB] !font-light text-[14px] leading-[100%]
+}
+.f-contact{
+  @apply text-white hover:text-[#3B5FDF]  text-[30px]
+}
  
 }
 
