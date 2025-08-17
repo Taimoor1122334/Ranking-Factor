@@ -32,7 +32,7 @@
   }
 
   .intro-main-title{
-    @apply font-bold text-[45px] md:text-[110px] lg:text-[150px] text-[#142041]
+    @apply font-bold text-[40px] md:text-[110px] lg:text-[150px] text-[#142041]
   }
 
   .description{
@@ -42,7 +42,7 @@
     @apply  text-[20px] text-white font-medium underline hover:text-[#3b82f6] decoration-[#3b82f6] -outline-offset-4
   }
   .overlay-text{
-    @apply text-[30px] md:text-[50px] lg:text-[70px]
+    @apply text-[25px] md:text-[50px] lg:text-[70px]
   }
   .intro-section{
     @apply   py-[1rem] md:py-[2rem] lg:py-[3rem] px-[4px] md:px-[0.6rem] lg:px-[1rem]
@@ -67,7 +67,7 @@
  
 
 .overlay-text3{
-  @apply absolute top-[50%] left-[40%] md:left-[40%] lg:left-[50%] text-[20px] md:text-[40px] lg:text-[70px] 
+  @apply absolute top-[50%] left-[45%] md:left-[40%] lg:left-[50%] text-[20px] md:text-[40px] lg:text-[70px] 
 }
 
   .service-description{
@@ -81,8 +81,25 @@
   @apply text-white font-bold text-[50px] md:text-[70px] lg:text-[130px] leading-none mt-4 md:mt-8  lg:self-start;
 }
 .service-description {
-  @apply text-white text-sm sm:text-base md:text-[16px] leading-relaxed;
+  @apply text-white  text-sm sm:text-base md:text-[16px] leading-relaxed;
 }
+}
+
+.images-container{
+  @apply flex h-[400px] md:h-[500px] lg:h-[720px] gap-[1rem]
+}
+
+.image-panel{
+  @apply h-[400px] md:h-[500px] lg:h-[720px] 
+}
+
+  .overlay-text4{
+    @apply absolute top-[50%] lg:top-[46%] left-[55%] lg:left-[41%] text-[25px] md:text-[50px] lg:text-[70px] leading-[100%]
+  }
+
+   .overlay-text4{
+    @apply absolute top-[50%] lg:top-[46%] left-[55%] lg:left-[41%] text-[25px] md:text-[50px] lg:text-[70px] leading-[100%]
+  }
   .rtr-title{
     @apply font-bold text-white text-[150px] py-12 leading-0 
   }
@@ -91,22 +108,22 @@
   @apply absolute left-1/2 -translate-x-1/2 top-0 h-auto max-w-[626px] object-cover object-center opacity-0 transition-opacity duration-500 ease-out;
 }
 .tab-item{
-  @apply  cursor-pointer  border-b border-white px-4 py-4 transition-colors w-full max-w-2xl
+  @apply  cursor-pointer border-l lg:border-l-0 lg:border-b border-white px-4 py-4 transition-colors w-full max-w-2xl
 }
 .tab-item .heading{
-  @apply  uppercase text-white text-[42px] leading-[37px] !font-normal
+  @apply  uppercase text-white text-[20px] md:text-[30px] lg:text-[42px] leading-[20px] md:leading-[27px] lg:leading-[37px] !font-normal
 }
 .footer-nav-link{
-  @apply  text-white font-bold leading-[100%] text-[42px] uppercase hover:text-[#3B5FDF]
+  @apply  text-white !font-medium md:!font-semibold lg:!font-bold leading-[100%] text-[20px] md:text-[30px] lg:text-[42px] uppercase hover:text-[#3B5FDF]
 }
 .f-contact-heading{
-  @apply  text-[#FBFBFB] !font-light text-[14px] leading-[100%]
+  @apply  text-[#FBFBFB] !font-light text-[12px] md:text-[14px] leading-[100%]
 }
 .f-contact{
-  @apply text-white hover:text-[#3B5FDF]  text-[30px]
+  @apply text-white !font-medium md:!font-semibold lg:!font-bold hover:text-[#3B5FDF]  text-[20px] md:text-[25px] lg:text-[30px]
 }
  
-}
+
 
   .btns{
     padding: 10px 20px; 
@@ -315,16 +332,15 @@ margin-top: -7px;
 @media (max-width: 768px) {
   #toggle-btn {
     width: 150px;
-    margin-right: 15px;
-    margin-top: 10px;
+    
   }
 
   .menu {
     flex-direction: row;
     margin-inline: 0;
 
-    margin-top: -50px;
-    align-items: start;
+    margin-top: -100px;
+   
     justify-content: center;
   }
 
@@ -610,11 +626,7 @@ margin-top: -7px;
   display: block;
   pointer-events: auto;
 }
-.images-container {
-  display: flex;
-  min-height: 727px;
-  gap: 1rem;
-}
+
 .image-panel {
   flex: 1;
   min-width: 0;
@@ -657,13 +669,10 @@ margin-top: -7px;
 
 .overlay-text4{
 
-    position: absolute;
-  top: 46%;
-  left: 41%;
+ 
   transform: translate(-50%, -50%);
   color: #3B5FDF;
-  line-height: 100%;
-  font-size: 70px;
+  
   white-space: nowrap;
   z-index: 10;
   font-family: 'Eagle Horizon', serif;
@@ -674,13 +683,9 @@ margin-top: -7px;
 
 .overlay-text5{
 
-    position: absolute;
-  top: 50%;
-  left: 37%;
   transform: translate(-50%, -50%);
   color: #3B5FDF;
-  line-height: 100%;
-  font-size: 70px;
+
   white-space: nowrap;
   z-index: 10;
   font-family: 'Eagle Horizon', serif;
