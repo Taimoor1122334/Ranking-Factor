@@ -113,6 +113,10 @@
 .tab-item .heading{
   @apply  uppercase text-white text-[20px] md:text-[30px] lg:text-[42px] leading-[20px] md:leading-[27px] lg:leading-[37px] !font-normal
 }
+
+.overlay-text5{
+  @apply    absolute top-[40%]  lg:top-[50%] left-[32%] lg:left-[38%] text-[20px] md:text-[40px] lg:text-[70px] leading-[100%]
+}
 .footer-nav-link{
   @apply  text-white !font-medium md:!font-semibold lg:!font-bold leading-[100%] text-[20px] md:text-[30px] lg:text-[42px] uppercase hover:text-[#3B5FDF]
 }
